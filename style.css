@@ -1,0 +1,520 @@
+/* =========================================================
+   RUANG FUNGSI — Tema Pink & Putih dengan Animasi Matematika
+   ========================================================= */
+
+:root{
+  --pink-deep:   #e0577f;
+  --pink-mid:    #f492b3;
+  --pink-light:  #ffd7e3;
+  --pink-blush:  #fff3f7;
+  --white:       #ffffff;
+  --ink:         #402231;
+  --ink-soft:    #7a5a68;
+  --success:     #2f9e6e;
+  --success-bg:  #e6f7ef;
+  --error:       #d84a5b;
+  --error-bg:    #fdeaec;
+  --shadow:      0 10px 30px rgba(224, 87, 127, 0.14);
+  --radius:      20px;
+  --font-display:'Fraunces', serif;
+  --font-body:   'Poppins', sans-serif;
+}
+
+*{ box-sizing: border-box; }
+
+html{ scroll-behavior: smooth; }
+
+body{
+  margin:0;
+  min-height:100vh;
+  font-family: var(--font-body);
+  color: var(--ink);
+  background: linear-gradient(180deg, var(--pink-blush) 0%, var(--white) 40%);
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* ---------------------------------------------
+   LAPISAN ANIMASI SIMBOL MATEMATIKA (BACKGROUND)
+   --------------------------------------------- */
+.math-bg{
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.math-symbol{
+  position: absolute;
+  bottom: -10%;
+  font-family: var(--font-display);
+  color: var(--pink-mid);
+  opacity: 0.16;
+  font-style: italic;
+  animation-name: floatUp;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  user-select: none;
+}
+
+@keyframes floatUp{
+  0%   { transform: translateY(0) rotate(0deg); opacity: 0; }
+  10%  { opacity: 0.18; }
+  90%  { opacity: 0.14; }
+  100% { transform: translateY(-115vh) rotate(25deg); opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce){
+  .math-symbol{ animation: none; display:none; }
+  *{ animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; }
+}
+
+/* ---------------------------------------------
+   LAYOUT
+   --------------------------------------------- */
+.app{
+  position: relative;
+  z-index: 1;
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 28px 20px 60px;
+}
+
+/* ---------------------------------------------
+   HEADER / TOPBAR
+   --------------------------------------------- */
+.topbar{
+  display:flex;
+  flex-wrap: wrap;
+  align-items:center;
+  justify-content: space-between;
+  gap: 18px;
+  padding-bottom: 18px;
+}
+
+.brand{
+  display:flex;
+  align-items:center;
+  gap: 12px;
+}
+
+.brand-curve{ color: var(--pink-deep); flex-shrink:0; }
+
+.brand-eyebrow{
+  margin:0;
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+.brand-title{
+  margin: 2px 0 0;
+  font-family: var(--font-display);
+  font-size: 26px;
+  font-weight: 600;
+  color: var(--pink-deep);
+}
+
+.tabs{
+  display:flex;
+  gap: 4px;
+  background: var(--white);
+  padding: 6px;
+  border-radius: 999px;
+  box-shadow: var(--shadow);
+  flex-wrap: wrap;
+}
+
+.tab-btn{
+  border:none;
+  background: transparent;
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--ink-soft);
+  padding: 10px 16px;
+  border-radius: 999px;
+  cursor: pointer;
+  display:flex;
+  align-items:center;
+  gap: 7px;
+  transition: color 0.2s ease, background 0.25s ease;
+}
+
+.tab-btn .tab-index{
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 12px;
+  color: var(--pink-mid);
+}
+
+.tab-btn:hover{ color: var(--pink-deep); }
+
+.tab-btn.active{
+  background: var(--pink-deep);
+  color: var(--white);
+}
+.tab-btn.active .tab-index{ color: var(--pink-light); }
+
+.tab-indicator{ display:none; }
+
+/* ---------------------------------------------
+   CONTENT / CARDS
+   --------------------------------------------- */
+.content{ position: relative; }
+
+.page{
+  display:none;
+  animation: fadeSlide 0.45s ease;
+}
+.page.active{ display:block; }
+
+@keyframes fadeSlide{
+  from{ opacity:0; transform: translateY(10px); }
+  to{ opacity:1; transform: translateY(0); }
+}
+
+.card{
+  background: var(--white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 32px;
+  margin-bottom: 24px;
+  border: 1px solid rgba(224,87,127,0.08);
+}
+
+.eyebrow{
+  margin:0 0 4px;
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--pink-mid);
+  font-weight:600;
+}
+
+.card h2{
+  margin: 0 0 14px;
+  font-family: var(--font-display);
+  color: var(--pink-deep);
+  font-size: 28px;
+}
+
+/* ---------------------------------------------
+   TAB 1 — PROFIL (Sudah Diperbarui untuk Foto)
+   --------------------------------------------- */
+.profile-card{
+  display:flex;
+  gap: 28px;
+  align-items:center;
+  flex-wrap: wrap;
+}
+
+.profile-avatar {
+  flex-shrink: 0;
+  width: 110px;
+  height: 110px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.profile-avatar img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid var(--pink-light);
+  box-shadow: 0 4px 14px rgba(224, 87, 127, 0.2);
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.profile-avatar img:hover {
+  transform: scale(1.05) rotate(2deg);
+  border-color: var(--pink-deep);
+}
+
+.profile-info h2{
+  margin: 4px 0 16px;
+  font-size: 26px;
+}
+
+.profile-grid{
+  display:grid;
+  grid-template-columns: repeat(2, minmax(180px,1fr));
+  gap: 14px 24px;
+  margin:0;
+}
+
+.profile-grid dt{
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  margin-bottom: 2px;
+}
+.profile-grid dd{
+  margin:0;
+  font-weight: 500;
+  color: var(--ink);
+}
+
+.note-card h3{
+  margin-top:0;
+  color: var(--pink-deep);
+  font-family: var(--font-display);
+}
+.note-card p{ line-height:1.7; color: var(--ink-soft); }
+
+/* ---------------------------------------------
+   TAB 2 — MATERI
+   --------------------------------------------- */
+.materi-block{
+  padding: 18px 0;
+  border-top: 1px dashed var(--pink-light);
+}
+.materi-block:first-of-type{ border-top: none; }
+
+.materi-block h3{
+  color: var(--pink-deep);
+  font-family: var(--font-display);
+  font-size: 19px;
+  margin-bottom: 8px;
+}
+.materi-block p, .materi-block li{
+  line-height: 1.75;
+  color: var(--ink);
+}
+.materi-block ul, .materi-block ol{ padding-left: 20px; }
+
+.math{
+  font-family: var(--font-display);
+  font-style: italic;
+  background: var(--pink-blush);
+  padding: 1px 6px;
+  border-radius: 6px;
+  color: var(--pink-deep);
+  white-space: nowrap;
+}
+
+/* ---------------------------------------------
+   TAB 3 — LATIHAN SOAL
+   --------------------------------------------- */
+.quiz-options{
+  display:flex;
+  gap: 16px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+.quiz-count-btn{
+  flex: 1 1 140px;
+  border: 2px solid var(--pink-light);
+  background: var(--pink-blush);
+  border-radius: 16px;
+  padding: 22px 10px;
+  cursor:pointer;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap: 4px;
+  transition: transform 0.18s ease, border-color 0.18s ease, background 0.18s ease;
+}
+.quiz-count-btn:hover{
+  transform: translateY(-4px);
+  border-color: var(--pink-deep);
+  background: var(--pink-light);
+}
+.quiz-count-btn .count-num{
+  font-family: var(--font-display);
+  font-size: 34px;
+  color: var(--pink-deep);
+  font-weight:600;
+}
+.quiz-count-btn .count-label{
+  font-size: 13px;
+  color: var(--ink-soft);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.quiz-note{
+  margin-top: 14px;
+  font-size: 13px;
+  color: var(--ink-soft);
+}
+
+.quiz-progress{
+  display:flex;
+  align-items:center;
+  gap: 14px;
+  margin-bottom: 22px;
+  font-size: 13px;
+  color: var(--ink-soft);
+}
+.progress-track{
+  flex:1;
+  height: 8px;
+  background: var(--pink-light);
+  border-radius: 999px;
+  overflow:hidden;
+}
+.progress-fill{
+  height:100%;
+  width:0%;
+  background: linear-gradient(90deg, var(--pink-mid), var(--pink-deep));
+  border-radius: 999px;
+  transition: width 0.35s ease;
+}
+
+.question-text{
+  font-family: var(--font-display);
+  font-size: 20px;
+  color: var(--ink);
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+
+.options-list{
+  display:flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.option-item{
+  display:flex;
+  align-items:center;
+  gap: 12px;
+  border: 2px solid var(--pink-light);
+  border-radius: 14px;
+  padding: 14px 16px;
+  cursor:pointer;
+  background: var(--white);
+  transition: border-color 0.18s ease, background 0.18s ease, transform 0.12s ease;
+  font-size: 15px;
+}
+.option-item:hover{ border-color: var(--pink-mid); transform: translateX(3px); }
+.option-item.selected{
+  border-color: var(--pink-deep);
+  background: var(--pink-blush);
+}
+.option-letter{
+  flex-shrink:0;
+  width: 28px; height:28px;
+  border-radius:50%;
+  background: var(--pink-light);
+  color: var(--pink-deep);
+  font-weight:600;
+  display:flex; align-items:center; justify-content:center;
+  font-size: 13px;
+}
+.option-item.selected .option-letter{
+  background: var(--pink-deep);
+  color: var(--white);
+}
+
+.quiz-nav{
+  display:flex;
+  justify-content: space-between;
+  margin-top: 26px;
+}
+
+.btn{
+  border:none;
+  border-radius: 999px;
+  padding: 12px 24px;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 14px;
+  cursor:pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, opacity 0.15s ease;
+}
+.btn.primary{
+  background: var(--pink-deep);
+  color: var(--white);
+  box-shadow: 0 8px 18px rgba(224,87,127,0.3);
+}
+.btn.primary:hover{ transform: translateY(-2px); }
+.btn.primary:disabled{ opacity: 0.5; cursor: not-allowed; transform:none; }
+.btn.ghost{
+  background: transparent;
+  color: var(--ink-soft);
+  border: 2px solid var(--pink-light);
+}
+.btn.ghost:hover{ border-color: var(--pink-deep); color: var(--pink-deep); }
+.btn.ghost:disabled{ opacity:0.4; cursor:not-allowed; }
+
+#resultScore{
+  font-family: var(--font-display);
+  color: var(--pink-deep);
+  font-size: 34px;
+  margin-bottom: 6px;
+}
+#resultSummary{ color: var(--ink-soft); margin-bottom: 20px; }
+
+.review-list{
+  margin-top: 28px;
+  display:flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.review-item{
+  border-radius: 16px;
+  padding: 18px 20px;
+  border-left: 5px solid var(--pink-light);
+  background: var(--pink-blush);
+}
+.review-item.correct{ border-left-color: var(--success); background: var(--success-bg); }
+.review-item.incorrect{ border-left-color: var(--error); background: var(--error-bg); }
+
+.review-item .rq{
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+.review-item .ra{ font-size: 14px; margin: 2px 0; color: var(--ink); }
+.review-item .rc{
+  font-size: 13.5px;
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px dashed rgba(64,34,49,0.15);
+  color: var(--ink-soft);
+  line-height: 1.6;
+}
+.review-item .rc strong{ color: var(--pink-deep); }
+
+/* ---------------------------------------------
+   TAB 4 — REFERENSI
+   --------------------------------------------- */
+.ref-list{
+  padding-left: 20px;
+  line-height: 1.9;
+}
+.ref-list li{ margin-bottom: 10px; }
+.ref-author{ font-weight: 600; }
+.ref-title{ font-style: italic; color: var(--pink-deep); }
+.ref-list a{ color: var(--pink-deep); }
+
+/* ---------------------------------------------
+   FOOTER
+   --------------------------------------------- */
+.footer{
+  text-align:center;
+  font-size: 12.5px;
+  color: var(--ink-soft);
+  padding: 10px 0 30px;
+  position: relative;
+  z-index: 1;
+}
+
+/* ---------------------------------------------
+   RESPONSIVE
+   --------------------------------------------- */
+@media (max-width: 640px){
+  .card{ padding: 22px; }
+  .profile-grid{ grid-template-columns: 1fr; }
+  .tabs{ width:100%; justify-content: space-between; }
+  .tab-btn{ padding: 9px 10px; font-size: 12.5px; }
+  .brand-title{ font-size: 21px; }
+}
