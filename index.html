@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kalkulus Lanjutan · Fungsi</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,500&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="math-bg" id="mathBg" aria-hidden="true"></div>
+
+<div class="app">
+
+  <header class="topbar">
+    <div class="brand">
+      <svg class="brand-curve" width="46" height="46" viewBox="0 0 46 46" aria-hidden="true">
+        <path d="M3 34 C 12 8, 20 8, 23 23 S 34 38, 43 12" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+      </svg>
+      <div>
+        <p class="brand-eyebrow">Kalkulus Lanjutan</p>
+        <h1 class="brand-title">Ruang Fungsi</h1>
+      </div>
+    </div>
+
+    <nav class="tabs" role="tablist" aria-label="Navigasi halaman">
+      <button class="tab-btn active" data-tab="profil" role="tab" aria-selected="true"><span class="tab-index">f(0)</span> Profil</button>
+      <button class="tab-btn" data-tab="materi" role="tab" aria-selected="false"><span class="tab-index">f(1)</span> Materi</button>
+      <button class="tab-btn" data-tab="latihan" role="tab" aria-selected="false"><span class="tab-index">f(2)</span> Latihan Soal</button>
+      <button class="tab-btn" data-tab="referensi" role="tab" aria-selected="false"><span class="tab-index">f(3)</span> Referensi</button>
+      <button class="tab-btn" data-tab="kalkulator" role="tab" aria-selected="false"><span class="tab-index">f(4)</span> Kalkulator</button>
+    </nav>
+  </header>
+
+  <div class="tab-indicator" id="tabIndicator"></div>
+
+  <main class="content">
+
+    <section class="page active" id="profil">
+      <div class="card profile-card">
+        <div class="profile-avatar" aria-label="Foto Profil Nadya Shafira Maulidya">
+          <img src="fotoku.jpeg" alt="Foto Profil">
+        </div>
+        <div class="profile-info">
+          <p class="eyebrow">Dibuat oleh</p>
+          <h2>Nadya Shafira Maulidya</h2>
+          <dl class="profile-grid">
+            <div><dt>NPM</dt><dd>202557201001</dd></div>
+            <div><dt>Program Studi</dt><dd>Sistem Informasi</dd></div>
+            <div><dt>Fakultas</dt><dd>Teknik</dd></div>
+            <div><dt>Universitas</dt><dd>Universitas Musamus Merauke</dd></div>
+            <div><dt>Dosen Pengampu</dt><dd>Dr. Kamariah, S.Pd., M.Pd</dd></div>
+            <div><dt>Mata Kuliah</dt><dd>Kalkulus Lanjutan</dd></div>
+          </dl>
+        </div>
+      </div>
+
+      <div class="card note-card">
+        <h3>Tentang Aplikasi Ini</h3>
+        <p>Ruang Fungsi adalah aplikasi web pembelajaran interaktif yang dibuat sebagai tugas mata kuliah Kalkulus Lanjutan. Aplikasi ini berisi ringkasan materi fungsi serta latihan soal pilihan ganda lengkap dengan kunci jawaban dan cara penyelesaiannya, untuk membantu memahami konsep fungsi secara lebih praktis.</p>
+      </div>
+
+      <div class="card note-card" style="border-left: 4px solid var(--pink-deep, #ff4081);">
+        <h3>Kata Motivasi</h3>
+        <p style="font-style: italic; line-height: 1.6;">"Belajarlah fungsi matematika dengan penuh semangat. Setiap rumus yang dipahami, setiap soal yang berhasil diselesaikan, dan setiap kesalahan yang diperbaiki adalah langkah menuju keberhasilan. Ingatlah, keberhasilan bukan ditentukan oleh seberapa cepat kita memahami materi, tetapi oleh seberapa gigih kita terus belajar dan tidak mudah menyerah."</p>
+      </div>
+    </section>
+
+    <section class="page" id="materi">
+      <div class="card">
+        <p class="eyebrow">Bab 1</p>
+        <h2>Materi Fungsi</h2>
+
+        <article class="materi-block" style="margin-bottom: 25px;">
+          <h3>1. Pengertian Fungsi</h3>
+          <p>Fungsi (pemetaan) adalah relasi yang memasangkan setiap anggota himpunan A (daerah asal / <em>domain</em>) dengan tepat satu anggota himpunan B (daerah kawan / <em>kodomain</em>). Fungsi <span class="math">f</span> dari A ke B ditulis <span class="math">f : A → B</span>, dan nilai fungsi di <span class="math">x</span> ditulis <span class="math">y = f(x)</span>.</p>
+          <p>Himpunan seluruh nilai <span class="math">f(x)</span> yang benar-benar dihasilkan disebut <em>range</em> (daerah hasil), dan range selalu merupakan himpunan bagian dari kodomain.</p>
+        </article>
+
+        <article class="materi-block" style="margin-bottom: 25px;">
+          <h3>2. Domain, Kodomain, dan Range</h3>
+          <ul style="padding-left: 20px; margin-bottom: 10px;">
+            <li><strong>Domain (Df):</strong> semua nilai <span class="math">x</span> yang boleh dimasukkan agar fungsi terdefinisi.</li>
+            <li><strong>Kodomain:</strong> himpunan tempat nilai fungsi "dijanjikan" berada.</li>
+            <li><strong>Range (Rf):</strong> himpunan nilai <span class="math">y</span> yang benar-benar dicapai fungsi.</li>
+          </ul>
+          <p>Contoh: untuk <span class="math">f(x) = √(x − 2)</span>, syarat akar tidak boleh negatif sehingga <span class="math">x − 2 ≥ 0 → x ≥ 2</span>. Maka <span class="math">Df = {x | x ≥ 2}</span>.</p>
+        </article>
+
+        <article class="materi-block" style="margin-bottom: 25px;">
+          <h3>3. Jenis-Jenis Fungsi</h3>
+          <ul style="padding-left: 20px;">
+            <li><strong>Fungsi linear:</strong> <span class="math">f(x) = ax + b</span>, grafiknya garis lurus.</li>
+            <li><strong>Fungsi kuadrat:</strong> <span class="math">f(x) = ax² + bx + c</span>, grafiknya parabola.</li>
+            <li><strong>Fungsi polinomial:</strong> penjumlahan suku berpangkat bilangan asli.</li>
+            <li><strong>Fungsi rasional:</strong> berbentuk <span class="math">f(x) = P(x)/Q(x)</span>, dengan <span class="math">Q(x) ≠ 0</span>.</li>
+            <li><strong>Fungsi eksponensial:</strong> <span class="math">f(x) = aˣ</span>, tumbuh/menyusut secara eksponensial.</li>
+            <li><strong>Fungsi logaritma:</strong> invers dari fungsi eksponensial, <span class="math">f(x) = ᵃlog x</span>.</li>
+            <li><strong>Fungsi trigonometri:</strong> <span class="math">sin x, cos x, tan x</span>, bersifat periodik.</li>
+          </ul>
+        </article>
+
+        <article class="materi-block" style="margin-bottom: 25px;">
+          <h3>4. Operasi pada Fungsi</h3>
+          <p>Jika diketahui <span class="math">f(x)</span> dan <span class="math">g(x)</span>, maka:</p>
+          <ul style="padding-left: 20px;">
+            <li><span class="math">(f + g)(x) = f(x) + g(x)</span></li>
+            <li><span class="math">(f − g)(x) = f(x) − g(x)</span></li>
+            <li><span class="math">(f · g)(x) = f(x) · g(x)</span></li>
+            <li><span class="math">(f/g)(x) = f(x)/g(x)</span>, dengan syarat <span class="math">g(x) ≠ 0</span></li>
+            <li><strong>Fungsi komposisi:</strong> <span class="math">(f ∘ g)(x) = f(g(x))</span>, nilai <span class="math">g(x)</span> dimasukkan ke variabel <span class="math">x</span> pada fungsi <span class="math">f</span>.</li>
+          </ul>
+        </article>
+
+        <article class="materi-block" style="margin-bottom: 25px;">
+          <h3>5. Fungsi Invers</h3>
+          <p>Fungsi invers <span class="math">f⁻¹(x)</span> adalah fungsi kebalikan dari <span class="math">f(x)</span> yang hanya ada jika <span class="math">f</span> bersifat bijektif (satu-satu dan onto). Cara mencari invers: ganti <span class="math">f(x)</span> menjadi <span class="math">y</span>, tukar posisi <span class="math">x</span> dan <span class="math">y</span>, lalu selesaikan <span class="math">y</span> kembali.</p>
+        </article>
+
+        <article class="materi-block" style="margin-bottom: 25px;">
+          <h3>6. Fungsi Genap dan Ganjil</h3>
+          <ul style="padding-left: 20px;">
+            <li><strong>Genap:</strong> <span class="math">f(−x) = f(x)</span>, grafik simetris terhadap sumbu-y.</li>
+            <li><strong>Ganjil:</strong> <span class="math">f(−x) = −f(x)</span>, grafik simetris terhadap titik asal.</li>
+          </ul>
+        </article>
+
+        <article class="materi-block">
+          <h3>7. Limit dan Kekontinuan Fungsi (Pengantar Kalkulus)</h3>
+          <p>Limit fungsi <span class="math">lim(x→a) f(x) = L</span> menyatakan nilai yang didekati <span class="math">f(x)</span> saat <span class="math">x</span> mendekati <span class="math">a</span>. Suatu fungsi dikatakan <em>kontinu</em> di <span class="math">x = a</span> jika:</p>
+          <ol style="padding-left: 20px;">
+            <li><span class="math">f(a)</span> terdefinisi,</li>
+            <li><span class="math">lim(x→a) f(x)</span> ada, dan</li>
+            <li><span class="math">lim(x→a) f(x) = f(a)</span>.</li>
+          </ol>
+        </article>
+      </div>
+    </section>
+
+    <section class="page" id="latihan">
+      <div class="card" id="quizSetup">
+        <p class="eyebrow">Bab 2</p>
+        <h2>Latihan Soal Pilihan Ganda</h2>
+        <p>Pilih jumlah soal yang ingin dikerjakan. Setiap soal disertai kunci jawaban dan pembahasan cara penyelesaian setelah kuis selesai.</p>
+
+        <div class="quiz-options" id="quizOptions" style="display: flex; gap: 15px; margin: 20px 0;">
+          <button class="quiz-count-btn" data-count="10" style="flex:1; padding:15px; border-radius:10px; border:1px solid #ccc; background:#fff; cursor:pointer;">
+            <span class="count-num" style="display:block; font-size:24px; font-weight:700;">10</span><span class="count-label" style="font-size:13px; color:#666;">Soal</span>
+          </button>
+          <button class="quiz-count-btn" data-count="20" style="flex:1; padding:15px; border-radius:10px; border:1px solid #ccc; background:#fff; cursor:pointer;">
+            <span class="count-num" style="display:block; font-size:24px; font-weight:700;">20</span><span class="count-label" style="font-size:13px; color:#666;">Soal</span>
+          </button>
+          <button class="quiz-count-btn" data-count="50" style="flex:1; padding:15px; border-radius:10px; border:1px solid #ccc; background:#fff; cursor:pointer;">
+            <span class="count-num" style="display:block; font-size:24px; font-weight:700;">50</span><span class="count-label" style="font-size:13px; color:#666;">Soal</span>
+          </button>
+        </div>
+        <p class="quiz-note" id="bankNote"></p>
+      </div>
+
+      <div class="card" id="quizArea" hidden>
+        <div class="quiz-progress" style="margin-bottom:15px;">
+          <span id="quizProgressText" style="font-weight:600;">Soal 1</span>
+          <div class="progress-track" style="width:100%; height:8px; background:#e2e8f0; border-radius:4px; margin-top:5px; overflow:hidden;">
+            <div class="progress-fill" id="progressFill" style="width:0%; height:100%; background:#ff4081; transition:0.3s;"></div>
+          </div>
+        </div>
+        <h3 id="questionText" class="question-text" style="margin-bottom:20px;"></h3>
+        <div class="options-list" id="optionsList" style="display:flex; flex-direction:column; gap:10px; margin-bottom:20px;"></div>
+        <div class="quiz-nav" style="display:flex; justify-content:space-between;">
+          <button class="btn ghost" id="prevBtn">← Sebelumnya</button>
+          <button class="btn primary" id="nextBtn">Selanjutnya →</button>
+        </div>
+      </div>
+
+      <div class="card" id="quizResult" hidden>
+        <h2 id="resultScore" style="color:#ff4081; font-size:32px; margin-bottom:10px;"></h2>
+        <p id="resultSummary" style="margin-bottom:20px;"></p>
+        <button class="btn primary" id="retryBtn" style="margin-bottom:25px;">Ulangi Latihan</button>
+        <div class="review-list" id="reviewList" style="display:flex; flex-direction:column; gap:20px; border-top:1px solid #eee; padding-top:20px;"></div>
+      </div>
+    </section>
+
+    <section class="page" id="referensi">
+      <div class="card">
+        <p class="eyebrow">Sumber</p>
+        <h2>Referensi</h2>
+        <ol class="ref-list" style="padding-left: 20px; line-height: 2;">
+          <li>
+            <span class="ref-author" style="font-weight:600;">Saptorini, K.</span> (2020).
+            <span class="ref-title" style="font-style:italic;">Ringkasan Matematika SMA: Panduan Lengkap dan Praktis.</span>
+            Bekasi: CN&amp;A.
+          </li>
+          <li>
+            <span class="ref-author" style="font-weight:600;">Visual Studio Code</span> — aplikasi kode editor yang digunakan untuk membangun aplikasi web ini.
+            <a href="https://code.visualstudio.com/" target="_blank" rel="noopener" style="color:#4f46e5; text-decoration:none;">code.visualstudio.com</a>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="page" id="kalkulator">
+      <div class="card">
+        <p class="eyebrow">Alat Bantu</p>
+        <h2>Kalkulator Fungsi & Grafik</h2>
+        <p style="margin-bottom: 20px;">Masukkan nilai koefisien fungsi untuk menganalisis sifat, menghitung titik uji, melihat langkah pengerjaan, dan memplot grafik.</p>
+        
+        <div style="margin-bottom: 20px;">
+          <label for="calcType" style="display:block; font-weight:600; margin-bottom:8px; color:#ff4081;">Pilih Tipe Fungsi:</label>
+          <select id="calcType" style="width:100%; padding:12px; border-radius:8px; border:2px solid #e0e0e0; font-family:inherit; font-size:15px; outline:none;">
+            <option value="linear">Fungsi Linear: f(x) = ax + b</option>
+            <option value="kuadrat">Fungsi Kuadrat: f(x) = ax² + bx + c</option>
+          </select>
+        </div>
+
+        <div id="calcInputs" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 15px; margin-bottom: 20px;">
+          <div>
+            <label for="inputA" style="display:block; font-size:14px; font-weight:500; margin-bottom:6px;">Nilai a:</label>
+            <input type="number" id="inputA" value="1" step="any" style="width:100%; padding:10px; border-radius:8px; border:1px solid #ccc; font-family:inherit;">
+          </div>
+          <div>
+            <label for="inputB" style="display:block; font-size:14px; font-weight:500; margin-bottom:6px;">Nilai b:</label>
+            <input type="number" id="inputB" value="2" step="any" style="width:100%; padding:10px; border-radius:8px; border:1px solid #ccc; font-family:inherit;">
+          </div>
+          <div id="containerC" style="display:none;">
+            <label for="inputC" style="display:block; font-size:14px; font-weight:500; margin-bottom:6px;">Nilai c:</label>
+            <input type="number" id="inputC" value="0" step="any" style="width:100%; padding:10px; border-radius:8px; border:1px solid #ccc; font-family:inherit;">
+          </div>
+        </div>
+
+        <div style="margin-bottom: 25px;">
+          <label for="inputX" style="display:block; font-size:14px; font-weight:500; margin-bottom:6px;">Hitung Nilai f(x) pada Titik x tertentu:</label>
+          <input type="number" id="inputX" value="3" step="any" style="width:100%; padding:10px; border-radius:8px; border:1px solid #ccc; font-family:inherit;">
+        </div>
+
+        <button class="btn primary" id="btnHitung" style="width: 100%; padding:14px; font-size:16px; font-weight:600; cursor:pointer;">Hitung & Plot Grafik</button>
+      </div>
+
+      <div class="card" style="margin-top: 20px; overflow: hidden;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+          <h3 style="margin: 0;">Visualisasi Grafik Koordinat</h3>
+          <span id="graphLabel" style="background: rgba(255, 64, 129, 0.1); color: #ff4081; padding: 4px 12px; border-radius: 20px; font-size: 13px; font-weight: 600;">f(x)</span>
+        </div>
+        
+        <div style="position: relative; width: 100%; min-height: 380px; background: #ffffff; border-radius: 12px; border: 1px solid #e2e8f0; padding: 10px; box-shadow: inset 0 2px 4px rgba(0,0,0,0.02);">
+          <svg id="functionSvg" width="100%" height="380" viewBox="0 0 600 380" style="overflow: visible; font-family: 'Poppins', sans-serif;"></svg>
+        </div>
+        
+        <div style="margin-top: 12px; font-size: 12px; color: #64748b; display: flex; gap: 15px; align-items: center;">
+          <span style="display: inline-flex; align-items: center; gap: 5px;"><span style="width: 12px; height: 3px; background: #ff4081; display: inline-block;"></span> Kurva Fungsi</span>
+          <span style="display: inline-flex; align-items: center; gap: 5px;"><span style="width: 8px; height: 8px; background: #4f46e5; border-radius: 50%; display: inline-block;"></span> Titik f(x) Terpilih</span>
+        </div>
+      </div>
+
+      <div class="card" id="calcResultCard" style="margin-top: 20px; border-left: 4px solid #4f46e5;">
+        <h3>Langkah Penyelesaian & Analisis</h3>
+        <hr style="border: 0; border-top: 1px solid #eee; margin: 12px 0;">
+        <div id="calcSteps" style="line-height: 1.8; font-size: 15px; color: #2d3748;">
+          <p style="color:#777; font-style:italic;">Klik tombol "Hitung & Plot Grafik" untuk melihat analisis rumus.</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <p>Ruang Fungsi · Tugas Kalkulus Lanjutan · Nadya Shafira Maulidya · 2026</p>
+  </footer>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
